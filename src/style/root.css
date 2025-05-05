@@ -1,0 +1,43 @@
+:root {
+    --mobile-content-left-right-margin: 24px;
+    --mobile-content-top-bottom-padding: 60px;
+
+    --tablet-content-left-right-margin: 64px;
+    --tablet-and-above-content-top-bottom-padding: 80px; 
+
+    --desktop-content-max-width: 77.77%;
+    --desktop-content-max-width-vw: 77.77vw;
+    --large-desktop-content-max-width: 1120px;
+}
+
+#root {
+    background-color: #f0f4ec;
+}
+
+.page-container {
+    width: calc(100% - (2 * var(--mobile-content-left-right-margin)));
+    padding: var(--mobile-content-top-bottom-padding) 0;
+    margin: 0 var(--mobile-content-left-right-margin);
+}
+
+@media screen and (min-width: 600px){
+    .page-container {
+        width: calc(100% - (2 * var(--tablet-content-left-right-margin)));
+        padding: var(--tablet-and-above-content-top-bottom-padding) 0;
+        margin: 0 var(--tablet-content-left-right-margin);
+    }
+}
+
+@media screen and (min-width: 900px){
+    .page-container {
+        margin: auto;
+        width: var(--desktop-content-max-width);
+    }
+}
+
+@media screen and (min-width: 1440px){
+    .page-container {
+        width: var(--large-desktop-content-max-width);
+        margin: auto;
+    }
+}

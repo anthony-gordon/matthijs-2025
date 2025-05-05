@@ -1,0 +1,59 @@
+/* Basic styling for the header */
+.header {
+    display: flex;
+    justify-content: space-between; /* Align items at both ends */
+    align-items: center; /* Vertically center the items */
+    padding: 20px 28px;
+    background-color: #f0f4ec; /* Dark background */
+    color: #313131;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Make sure it stays on top */
+  }
+  
+  .header-title {
+    font-size: 24px;
+    letter-spacing: calc(24px * 0.05);
+    font-weight: bold;
+    font-family: "Nunito Sans", sans-serif;
+    color: #313131;
+  }
+  
+  .site-title {
+    color: #313131;
+    text-decoration: none;
+  }
+  
+  .menu-icon {
+    font-size: 24px;
+  }
+  
+  .menu-button {
+    background: none;
+    border: none;
+    color: black;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+  .menu-button:hover {
+    color: #f39c12; /* Change color on hover */
+  }
+  
+  @media screen and (min-width: 600px){
+    .header {
+        padding: 20px var(--tablet-content-left-right-margin);
+    }
+  }
+
+  @media screen and (min-width: 900px){
+    .header {
+        padding: 20px calc((100vw - var(--desktop-content-max-width-vw)) /2);
+    }
+  }
+
+  @media screen and (min-width: 1440px){
+    .header {
+        padding: 20px calc((100vw - var(--large-desktop-content-max-width)) /2);
+    }
+  }

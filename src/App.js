@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ItemProvider } from './ItemContext';
+import HomePage from './components/HomePage';
+import ItemPage from './components/ItemPage';
+import Header from './components/Header'; // Import the Header component
+import './App.css'; // Import the CSS file for styling
+import './style/root.css'; // Import the CSS file for styling
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ItemProvider>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/item/:slug" element={<ItemPage />} />
+        </Routes>
+      </Router>
+    </ItemProvider>
   );
 }
 
