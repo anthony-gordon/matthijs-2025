@@ -4,6 +4,8 @@ const ItemContext = createContext();
 
 export function ItemProvider({ children }) {
   const [items, setItems] = useState([]);
+  const [menuOpen, setMenuOpen] = useState(false);
+
 
   useEffect(() => {
     // Fetch data from Google Sheets
@@ -66,7 +68,7 @@ export function ItemProvider({ children }) {
   }, []);
 
   return (
-    <ItemContext.Provider value={{ items }}>
+    <ItemContext.Provider value={{ items, menuOpen, setMenuOpen }}>
       {children}
     </ItemContext.Provider>
   );
