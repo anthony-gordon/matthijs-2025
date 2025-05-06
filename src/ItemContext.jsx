@@ -43,7 +43,7 @@ export function ItemProvider({ children }) {
 
         const year = item['Year'] || new Date().getFullYear();
 
-        const imageURL1Match = item['Image 1 URL'].match(/\/d\/(.+?)\//);
+        const imageURL1Match = item['image_1_url'].match(/\/d\/(.+?)\//);
         const imageUrl1 = imageURL1Match
         ? `https://lh3.google.com/u/0/d/${imageURL1Match[1]}`
         : ''; 

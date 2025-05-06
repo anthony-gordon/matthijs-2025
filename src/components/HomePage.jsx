@@ -20,8 +20,8 @@ function HomePage() {
     <div className="page-container homepage">
     <div className="homepage__container">
       {items.map((item, index) => {
-        const imageSrc = item['Image 1 URL']; // Main image URL
-        const thumbnailSrc = item['Image 1 URL Thumbnail'];
+        const imageSrc = item['image_1_url']; // Main image URL
+        const thumbnailSrc = item['image_1_url_thumbnail'];
         const altText = item['Title'] || 'Image';
         const imageLoaded = loadedImages[item.id] || false; // Track image loading status by item id
         
@@ -32,7 +32,7 @@ function HomePage() {
           </div>
           <Link className="homepage__tile-link" to={`/item/${item.Slug}`} key={item.Slug}>
             <div className="homepage__tile-image-container">
-                {item['Image 1 URL'] && (
+                {item['image_1_url'] && (
                   <img
                   className="homepage__tile-image"
                   src={imageLoaded ? imageSrc : thumbnailSrc} // Use the thumbnail or main image based on load state
