@@ -10,7 +10,7 @@
     --large-desktop-content-max-width: 1120px;
 }
 
-#root {
+body, #root {
     background-color: #f0f4ec;
 }
 

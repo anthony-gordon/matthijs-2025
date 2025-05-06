@@ -7,6 +7,7 @@ function HomePage() {
   const { items } = useItems();
   // State to track when the image has loaded
   const [loadedImages, setLoadedImages] = useState({});
+  console.log('items', items)
 
   // Function to handle image load
   const handleImageLoad = (id) => {
@@ -27,7 +28,7 @@ function HomePage() {
         
 
         return (
-         <div className="homepage__tile-link-outer" data-index={parseInt(index + 1) % 6}>
+         <div key={index} className="homepage__tile-link-outer" data-index={parseInt(index + 1) % 6}>
           <div className="homepage__tile-link-spacer">
           </div>
           <Link className="homepage__tile-link" to={`/item/${item.Slug}`} key={item.Slug}>
